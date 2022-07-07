@@ -1,0 +1,10 @@
+--- wscript	2022-06-27 06:07:46.000000000 +0200
++++ wscript	2022-06-27 06:08:05.000000000 +0200
+@@ -81,7 +81,7 @@
+ 
+     elif conf.options.MODE == 'release':
+         print('- Building in release mode')
+-        conf.env.CXXFLAGS += [ '-O2', '-msse2' ]
++        conf.env.CXXFLAGS += [ '-O2' ]
+     else:
+         raise ValueError('mode should be either "debug" or "release"')

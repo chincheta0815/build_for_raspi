@@ -1,0 +1,12 @@
+--- packaging/debian_3rdparty/build_libsamplerate.sh	2022-06-26 20:41:55.000000000 +0200
++++ packaging/debian_3rdparty/build_libsamplerate.sh	2022-06-26 20:40:33.000000000 +0200
+@@ -12,6 +12,9 @@
+ tar -xf $LIBSAMPLERATE_VERSION.tar.gz
+ cd $LIBSAMPLERATE_VERSION
+ 
++curl "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD" --output Cfg/config.guess     
++curl "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD" --output Cfg/config.sub
++
+ CPPFLAGS=-fPIC ./configure \
+     --prefix=$PREFIX \
+     $LIBSAMPLERATE_FLAGS \
